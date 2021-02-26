@@ -1,0 +1,23 @@
+{
+  "name": "javascript-junk",
+  "version": "0.0.1",
+  "private": true,
+  "license": "UNLICENCED",
+  "main": "lib/index.js",
+  "module": "lib/junk.esm.js",
+  "scripts": {
+    "build": "rollup -c",
+    "build:test": "rollup README.js --format cjs --file junk.test.js",
+    "prepare": "yarn build",
+    "pretest": "yarn build:test",
+    "test": "jest",
+    "posttest": "rm junk.test.js"
+  },
+  "devDependencies": {
+    "@rollup/plugin-strip": "^1.3.3",
+    "jest": "^26.1.0",
+    "rollup": "^2.18.0",
+    "rollup-plugin-cleanup": "^3.1.1",
+    "rollup-plugin-terser": "^6.1.0"
+  }
+}
